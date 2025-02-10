@@ -28,7 +28,7 @@ Everything—training, testing, and hyperparameter tuning—can be accessed via:
 python main.py
 ```
 
-You'll be presented with a **menu** where you can:
+You'll be presented with a **menu** where you can:  
 1️⃣ **Testing before learning (Random actions)**  
 2️⃣ **Train using Q-learning**  
 3️⃣ **Train using SARSA**  
