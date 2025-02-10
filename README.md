@@ -33,7 +33,7 @@ You'll be presented with a **menu** where you can:
 2️⃣ **Train using Q-learning**  
 3️⃣ **Train using SARSA**  
 4️⃣ **Grid Search for Q-learning**  
-5️⃣ **Grid Search for SARSA**
+5️⃣ **Grid Search for SARSA**  
 6️⃣ **Quit**  
 
 Simply **enter the number** corresponding to your desired action.
