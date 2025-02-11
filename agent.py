@@ -1,24 +1,22 @@
 import numpy as np
-from config import q_learning_hyperparameters, sarsa_hyperparameters
+from config import algorithm_to_use, get_hyperparameters
 
 class Agent:
-    def __init__(self, action_size, state_space, algorithm="q_learning"):
+    def __init__(self, action_size, Q_table, state_space=None, alpha=None, gamma=None, eps_decay=None):
         self.action_size = action_size
         self.state_space = state_space
-        self.algorithm = algorithm
+        self.algorithm = algorithm_to_use
 
-        if self.algorithm == "q_learning":
-            params = q_learning_hyperparameters
-        elif self.algorithm == "sarsa":
-            params = sarsa_hyperparameters
+        params = get_hyperparameters()
 
-        self.alpha = params["alpha"]
-        self.gamma = params["gamma"]
-        self.eps_decay = params["eps_decay"]
+        self.alpha = alpha if alpha is not None else params["alpha"]
+        self.gamma = gamma if gamma is not None else params["gamma"]
+        self.eps_decay = eps_decay if eps_decay is not None else params["eps_decay"]
+        self.state_space = state_space if state_space is not None else params["state_space"]
 
-        self.eps = 1.0
+        self.eps = 1
         self.eps_min = 0.1
-        self.q_table = np.zeros(state_space + [action_size])
+        self.q_table = Q_table
         
     def discretize(self, state, env_low, env_high):
         bins = [np.linspace(env_low[i], env_high[i], self.state_space[i]) for i in range(len(state))]
