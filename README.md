@@ -55,19 +55,3 @@ To find the optimal hyperparameters using **grid search**, run grid search from 
 - Grid search **does NOT automatically modify `config.py`**.
 
 ---
-
-## 📂 Project Structure
-```
-📦 MountainCar-RL
-├── 📜 README.md               # This file
-├── 📜 requirements.txt        # Dependencies
-├── 📜 config.py               # Hyperparameter settings
-├── 📜 main.py                 # Entry point (menu-based interface)
-├── 📜 train.py                # Training loop for Q-learning & SARSA
-├── 📜 grid_search.py          # Hyperparameter tuning via grid search
-├── 📜 agent.py                # Q-learning & SARSA agent class
-├── 📜 env.py                  # OpenAI Gym environment setup
-└── 📜 .gitignore              # Ignore unnecessary files
-```
-
----
